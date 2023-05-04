@@ -1,0 +1,224 @@
+section {
+  width: 100%;
+  height: 80vh;
+  padding: 10% 13.5% 0 13.5%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.text.pre,
+.text.post {
+  opacity: 0;
+}
+
+.images {
+  position: relative;
+  width: 420px;
+  overflow: hidden;
+}
+
+.images img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s linear;
+}
+
+.images img.post {
+  transform: translateX(100%);
+}
+
+.images img.pre {
+  transform: translateX(-100%);
+}
+
+.text > * {
+  transition: transform 0.3s ease-in-out;
+}
+.pre.text img {
+  transform: translateX(-80px);
+}
+
+.pre.text h2 {
+  transform: translateX(-50px);
+}
+
+.pre.text p {
+  transform: translateX(-30px);
+}
+
+.post.text img {
+  transform: translateX(80px);
+}
+
+.post.text h2 {
+  transform: translateX(50px);
+}
+
+.post.text p {
+  transform: translateX(30px);
+}
+
+.text {
+  color: var(--accent);
+  font-family: "Montserrat";
+  max-width: 40%;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+}
+
+.text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 48px;
+  white-space: nowrap;
+}
+.text img {
+  margin-bottom: 24px;
+}
+
+.text p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 75%;
+}
+
+aside {
+  width: 100%;
+  height: 19vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:first-of-type {
+  margin-right: 45px;
+}
+
+button svg {
+  width: 35px;
+  transition: fill 0.3s ease-in-out;
+}
+
+.steps {
+  display: flex;
+  margin-left: 100px;
+}
+
+.steps div {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.steps div:not(:first-child) {
+  margin-left: 190px;
+}
+
+.steps div:not(:first-of-type)::before {
+  content: "";
+  width: 190px;
+  height: 2px;
+  left: -190px;
+  top: 15px;
+  position: absolute;
+  background-color: var(--accent-darken);
+}
+
+.steps div:not(:first-of-type)::after {
+  content: "";
+  width: 190px;
+  height: 2px;
+  left: -190px;
+  top: 15px;
+  position: absolute;
+  background-color: var(--accent);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.steps div.pre:not(:first-of-type)::after {
+  width: 190px !important;
+}
+
+.steps div.active:not(:first-of-type)::after {
+  width: 190px !important;
+}
+
+.steps .pre,
+.steps .active {
+  background-color: var(--accent);
+}
+
+.steps .post {
+  background-color: var(--accent-darken);
+}
+
+.dates {
+  position: absolute;
+  bottom: -10px;
+  font-size: 160px;
+}
+
+.dates h2 {
+  display: flex;
+  color: var(--accent);
+  font-family: "Montserrat";
+}
+
+.dates h2 > span:not(:first-of-type) {
+  width: 1ch;
+}
+
+.dates h2 > span {
+  position: relative;
+  display: block;
+}
+
+.dates h2 > span > span {
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dates .pre {
+  transform: translateX(-20%);
+  opacity: 0;
+}
+
+.dates h2 > span:last-of-type > span {
+  transition-delay: 50ms;
+}
+
+.dates .active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.dates .post {
+  transform: translateX(20%);
+  opacity: 0;
+}
+
+.undread span {
+  opacity: 0;
+}
+
+.undread span.active {
+  opacity: 1;
+}

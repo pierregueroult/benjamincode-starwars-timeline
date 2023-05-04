@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #060447;
+  --accent: #fff38a;
+  --accent-darken: #827b68;
+}
+
+main {
+  width: 75vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  left: 12.5vw;
+}
+
+body {
+  background-color: var(--background);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat.ttf");
+}
